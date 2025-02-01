@@ -6,9 +6,9 @@
 
 // Definições gerais
 #define WS2812_PIN 7
-#define LED_RED_PIN 11
+#define LED_RED_PIN 13
 #define LED_GREEN_PIN 12
-#define LED_BLUE_PIN 13
+#define LED_BLUE_PIN 11
 #define BUTTON_A_PIN 5
 #define BUTTON_B_PIN 6
 #define NUM_PIXELS 25
@@ -20,12 +20,6 @@
 static int current_number = 0;
 static PIO pio = pio0;
 static uint sm = 0;
-
-// Cores
-#define RED   0xFF0000
-#define GREEN 0x00FF00
-#define BLUE  0x0000FF
-#define BLACK 0x000000
 
 // Matriz de números 0-9 (5x5)
 const uint8_t number_patterns[10][MATRIX_HEIGHT][MATRIX_WIDTH] = {
@@ -134,7 +128,7 @@ void display_number(int number) {
     for (int row = 0; row < MATRIX_HEIGHT; row++) {
         for (int col = 0; col < MATRIX_WIDTH; col++) {
             if (number_patterns[number][row][col]) {
-                put_pixel(rgb_to_grb(255, 0, 0));  // Vermelho
+                put_pixel(rgb_to_grb(255, 255, 255));  
             } else {
                 put_pixel(0);  // Apagado
             }
