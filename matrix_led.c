@@ -7,8 +7,8 @@
 // Definições gerais
 #define WS2812_PIN 7
 #define LED_RED_PIN 13
-#define LED_GREEN_PIN 12
-#define LED_BLUE_PIN 11
+#define LED_GREEN_PIN 11
+#define LED_BLUE_PIN 12
 #define BUTTON_A_PIN 5
 #define BUTTON_B_PIN 6
 #define NUM_PIXELS 25
@@ -128,7 +128,7 @@ void display_number(int number) {
     for (int row = 0; row < MATRIX_HEIGHT; row++) {
         for (int col = 0; col < MATRIX_WIDTH; col++) {
             if (number_patterns[number][row][col]) {
-                put_pixel(rgb_to_grb(255, 255, 255));  
+                put_pixel(rgb_to_grb(19, 96, 48));  
             } else {
                 put_pixel(0);  // Apagado
             }
