@@ -1,20 +1,20 @@
 # Matrix LED Task - Projeto com Interrupções no RP2040
 
-## Descrição do Projeto
+## 📚 Descrição do Projeto
 
 Este projeto foi desenvolvido para consolidar conceitos relacionados ao uso de interrupções no microcontrolador RP2040 e explorar funcionalidades da placa de desenvolvimento BitDogLab. Ele combina hardware e software para manipular uma matriz de LEDs WS2812, LEDs RGB e botões com funcionalidades específicas. 
 
 ---
 
-## Funcionalidades Implementadas
+## 🎯 Funcionalidades Implementadas
 
 1. **Controle da Matriz de LEDs WS2812 (5x5)**
-   - Exibe números de 0 a 9 utilizando um padrão fixo, no estilo de caracteres digitais.
+   - Exibe números de 0 a 9 utilizando um padrão fixo, no estilo de caracteres digitais. 
    - A matriz responde aos botões:
-     - Botão A: Incrementa o número exibido na matriz.
-     - Botão B: Decrementa o número exibido na matriz.
+     - Botão A: Incrementa o número exibido na matriz. ➕
+     - Botão B: Decrementa o número exibido na matriz. ➖
 
-2. **Controle do LED RGB**
+2. **Controle do LED RGB** 🔴
    - O LED vermelho pisca continuamente a uma frequência de 5 Hz (100 ms ON, 100 ms OFF).
 
 3. **Debouncing dos Botões**
@@ -25,7 +25,7 @@ Este projeto foi desenvolvido para consolidar conceitos relacionados ao uso de i
 
 ---
 
-## Componentes Utilizados
+## 🛠️ Componentes Utilizados
 
 ### Hardware
 - **Matriz 5x5 de LEDs WS2812**: Conectada à GPIO 7.
@@ -40,7 +40,7 @@ Este projeto foi desenvolvido para consolidar conceitos relacionados ao uso de i
 
 ---
 
-## Diagrama de Conexões
+## ⚙️ Diagrama de Conexões
 
 | Componente    | GPIO   | Descrição                     |
 |---------------|--------|-------------------------------|
@@ -53,35 +53,28 @@ Este projeto foi desenvolvido para consolidar conceitos relacionados ao uso de i
 
 ---
 
-## Organização do Código
+## 📂 Organização do Código
 
-- **`main.c`**: Arquivo principal do projeto contendo:
+- **`matrix_led.c`**: Arquivo principal do projeto contendo:
   - Inicialização do hardware.
   - Loop principal e controle do LED RGB.
   - Configuração e manipulação da matriz de LEDs.
   - Rotinas de interrupção para os botões.
 
-- **`ws2812.c` e `ws2812.h`**: Implementação das funções para controle dos LEDs WS2812 via PIO.
-
 - **`ws2812.pio`**: Código PIO para comunicação com LEDs endereçáveis WS2812.
 
 ---
 
-## Instruções de Compilação e Execução
+## 🛠️ Instruções de Compilação e Execução
 
 1. Clone o repositório para o ambiente local.
 2. Certifique-se de ter o RP2040 SDK configurado corretamente.
-3. Compile o projeto com o `cmake` e o `ninja`:
-   ```bash
-   mkdir build && cd build
-   cmake ..
-   ninja
-   ```
+3. Compile o projeto com o `Compile Project`
 4. Após a compilação, carregue o firmware gerado (`matrix_led.uf2`) na placa BitDogLab.
 
 ---
 
-## Demonstração do Projeto
+## 📹 Demonstração do Projeto
 
 ### Vídeo de Demonstração
 - O vídeo de demonstração exibe:
@@ -89,12 +82,13 @@ Este projeto foi desenvolvido para consolidar conceitos relacionados ao uso de i
   - Incremento e decremento dos números exibidos na matriz de LEDs ao pressionar os botões A e B.
   - Explicação das funcionalidades implementadas.
 
+[Video Demonstrativo](https://youtu.be/)
 ---
 
-## Autor
+## 💻 Autor
 - **Matheus Gouveia de Deus Bastos**
 
 ---
 
-## Licença
+## 📜 Licença
 Este projeto é de uso acadêmico e segue as diretrizes da Embarcatech.
